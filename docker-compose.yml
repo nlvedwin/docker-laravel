@@ -5,16 +5,11 @@ services:
         build:
             context: .
             dockerfile: Dockerfile
-            args:
-                USER_ID: 0
-                GROUP_ID: 0
         volumes:
             - ./:/var/www/html
         environment:
             - SSL_MODE=off
             - PHP_OPCACHE_ENABLE=1
-            - APACHE_RUN_USER=root
-            - APACHE_RUN_GROUP=root
         networks:
             - app-network
         ports:
