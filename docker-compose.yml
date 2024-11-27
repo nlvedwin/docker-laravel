@@ -6,8 +6,8 @@ services:
             context: .
             dockerfile: Dockerfile
             args:
-                USER_ID: 33
-                GROUP_ID: 33
+                USER_ID: 0
+                GROUP_ID: 0
         volumes:
             - ./:/var/www/html
         environment:
