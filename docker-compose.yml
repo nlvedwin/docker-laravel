@@ -13,6 +13,8 @@ services:
         environment:
             - SSL_MODE=off
             - PHP_OPCACHE_ENABLE=1
+            - APACHE_RUN_USER=root
+            - APACHE_RUN_GROUP=root
         networks:
             - app-network
         ports:
