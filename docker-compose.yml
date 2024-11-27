@@ -3,9 +3,6 @@ services:
         build:
             context: .
             dockerfile: Dockerfile
-            args:
-                USER_ID: $UID
-                GROUP_ID: $GID
         volumes:
             - ./:/var/www/html
         environment:
