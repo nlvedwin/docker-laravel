@@ -1,13 +1,9 @@
 FROM composer:latest AS composer
 
-FROM php:8.3.14-fpm
+FROM serversideup/php:8.3-fpm-nginx-alpine
 
-RUN docker-php-ext-install opcache
+WORKDIR /var/www/html
 
-WORKDIR /app
-
-COPY . /app
+COPY . /var/www/html
 
 COPY --from=composer /usr/bin/composer /usr/bin/composer
-
-CMD ["php-fpm"]
